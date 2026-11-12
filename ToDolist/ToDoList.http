@@ -1,6 +1,31 @@
 @ToDoList_HostAddress = http://localhost:5198
 
-GET {{ToDoList_HostAddress}}/weatherforecast/
+### Get all tasks
+GET {{ToDoList_HostAddress}}/api/TodoItems
 Accept: application/json
 
-###
+### Create a task
+POST {{ToDoList_HostAddress}}/api/TodoItems
+Content-Type: application/json
+
+{
+  "title": "Learn ASP.NET Core",
+  "description": "Build a Todo API with EF Core"
+}
+
+### Get a task by ID
+GET {{ToDoList_HostAddress}}/api/TodoItems/1
+Accept: application/json
+
+### Update a task
+PUT {{ToDoList_HostAddress}}/api/TodoItems/1
+Content-Type: application/json
+
+{
+  "title": "Learn ASP.NET Core",
+  "description": "Complete the CRUD API",
+  "isCompleted": true
+}
+
+### Delete a task
+DELETE {{ToDoList_HostAddress}}/api/TodoItems/1
